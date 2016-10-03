@@ -1,0 +1,19 @@
+{
+  "name": "cookie-checker",
+  "version": "1.0.0",
+  "description": "Stores and returns token in and out of session",
+  "main": "app.js",
+  "scripts": {
+    "test": "mocha -R spec test"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "cookie-session": "^2.0.0-alpha.1",
+    "express": "^4.14.0"
+  },
+  "devDependencies": {
+    "mocha": "^3.1.0",
+    "supertest": "^2.0.0"
+  }
+}
