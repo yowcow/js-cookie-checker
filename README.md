@@ -1,3 +1,4 @@
+[![Build Status](https://travis-ci.org/yowcow/js-cookie-checker.svg?branch=master)](https://travis-ci.org/yowcow/js-cookie-checker)
 [![CircleCI](https://circleci.com/gh/yowcow/js-cookie-checker.svg?style=svg)](https://circleci.com/gh/yowcow/js-cookie-checker)
 
 Cookie Checker
