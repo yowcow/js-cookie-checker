@@ -1,7 +1,7 @@
 const PORT = 5000
 
 var cookieSession = require('cookie-session')
-var express = require('express')
+var express       = require('express')
 
 var app = express()
 
@@ -21,6 +21,6 @@ app.get('/check', (req, res) => {
     res.send('callback("' + token + '");')
 })
 
-var server = app.listen(5000)
+var server = app.listen(PORT)
 
 module.exports = server
