@@ -17,8 +17,9 @@ app.get('/session/store', (req, res) => {
 })
 
 app.get('/session/check', (req, res) => {
-    token = req.session.token || ''
-    res.send('callback("' + token + '");')
+    var callback = req.query.callback || 'callback'
+    var token    = req.session.token || ''
+    res.send(callback + '("' + token + '");')
 })
 
 var server = app.listen(PORT)

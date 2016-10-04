@@ -12,7 +12,7 @@ describe('loading express', () => {
             .end(done)
     })
 
-    it('responds to /session/store with 200', (done) => {
+    it('responds to /session/store?token=hogefuga with 200', (done) => {
         request(app)
             .get('/session/store?token=hogefuga')
             .expect(200)
@@ -34,6 +34,21 @@ describe('loading express', () => {
                 assert.equal(
                     res.text,
                     'callback("hogefuga");'
+                )
+            })
+            .end(done)
+    })
+
+    it('responds to /session/check?callback=MyCallback with 200', (done) => {
+        var req = request(app).get('/session/check?callback=MyCallback')
+
+        req.cookies = cookies
+
+        req.expect(200)
+            .expect((res) => {
+                assert.equal(
+                    res.text,
+                    'MyCallback("hogefuga");'
                 )
             })
             .end(done)
