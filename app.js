@@ -10,13 +10,13 @@ app.use(cookieSession({
     keys: ['6cc22fd16902f2b8995144af09a6e1557e21bab2']
 }))
 
-app.get('/store', (req, res) => {
+app.get('/session/store', (req, res) => {
     var token = req.query.token || ''
     req.session.token = token
     res.send('OK')
 })
 
-app.get('/check', (req, res) => {
+app.get('/session/check', (req, res) => {
     token = req.session.token || ''
     res.send('callback("' + token + '");')
 })

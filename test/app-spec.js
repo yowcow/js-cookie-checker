@@ -12,9 +12,9 @@ describe('loading express', () => {
             .end(done)
     })
 
-    it('responds to /store with 200', (done) => {
+    it('responds to /session/store with 200', (done) => {
         request(app)
-            .get('/store?token=hogefuga')
+            .get('/session/store?token=hogefuga')
             .expect(200)
             .expect((res) => {
                 cookies = res.header['set-cookie'].map((cookie) => {
@@ -24,8 +24,8 @@ describe('loading express', () => {
             .end(done)
     })
 
-    it('responds to /check with 200', (done) => {
-        var req = request(app).get('/check')
+    it('responds to /session/check with 200', (done) => {
+        var req = request(app).get('/session/check')
 
         req.cookies = cookies
 
